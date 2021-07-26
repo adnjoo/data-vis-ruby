@@ -57,3 +57,8 @@ rails assets:precompile
 `rails s`, and `rails s -e production` should work
 
 `bundle lock --add-platform x86_64-linux`
+
+debug
+`bundle exec rake secret`
+
+config.secret_key_base = 'YourSecretKeyHere' in my production.rb located at config/environments

@@ -1,22 +1,35 @@
+<%# capitalize method %>
+<%=
+def capitalize(input)
+  input = input.split
+  input.each_with_index do |ele, i|
+    input[i] = ele.capitalize
+  end
+  return input.join(' ')
+end
+puts 'input'
+%>
+
+
 <div class="jumbotron">
   <h1 class='display-4'>
-    <%= @person.f_name %>
-    <%= @person.m_name %>
-    <%= @person.l_name %>,
+    <%= capitalize(@person.f_name) %>
+    <%= @person.m_name + '.' %>
+    <%= capitalize(@person.l_name) %>,
   </h1>
-    <%= @person.prefix %>
+    <%= capitalize(@person.prefix) %>
   <p class='lead'>
-    <%= @person.address1 %>,
-    <%= @person.address2 %>
-    <%= @person.city %>
+    <%= capitalize(@person.address1) %>,
+    <%= capitalize(@person.address2) %>
+    <%= capitalize(@person.city) %>
     <br>
-    <%= @person.state %>,
+    <%= capitalize(@person.state) %>,
     <%= @person.zipcode %>
   </p>
   <p class='lead'>
-    <%= @person.education %>
+    <%= capitalize(@person.education) %>
     <br>
-    <%= @person.estimated_income %>
+    <%= @person.estimated_income.downcase %>
   </p>
 </div>
 

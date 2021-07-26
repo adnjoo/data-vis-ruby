@@ -19,6 +19,7 @@ Rails.application.configure do
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
+  config.secret_key_base ='761193e23c45f95f46da5430184b26fce03b0319458a138f88305fcb6a298bd192b32c2080e944301be5d02af614d3f414e5cc258a576af32876bb1aa67bd200'
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
