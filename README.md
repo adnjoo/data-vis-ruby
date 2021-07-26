@@ -2,7 +2,7 @@
 
 > Ruby on Rails data visualization tool
 
-[<img src='scrn.png' width='250'`>](https://data-viz-ruby.herokuapp.com/)
+[<img src='./scrn.png' width='250'`>](https://data-viz-ruby.herokuapp.com/)
 
 ## Install:
 
