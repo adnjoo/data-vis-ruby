@@ -1,5 +1,5 @@
 <a href='https://data-viz-ruby.herokuapp.com/'>
-<img src='scrn.png' width='250'>
+<img src='scrn.png' width='250'`>
 </a>
 
 ## instructions:
