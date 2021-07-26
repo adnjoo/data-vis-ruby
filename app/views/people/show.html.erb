@@ -28,11 +28,13 @@ puts 'input'
     </h2>
     <p class='lead'>
       Address:
+      <%= capitalize(@person.address2) %>,
+
       <%= capitalize(@person.address1) %>,
-      <%= capitalize(@person.address2) %>
-      <%= capitalize(@person.city) %>
       <br>
+      <%= capitalize(@person.city) %>
       <%= capitalize(@person.state) %>,
+      <br>
       <%= @person.zipcode %>
     </p>
     <p class='lead'>
