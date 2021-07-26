@@ -13,12 +13,16 @@ puts 'input'
 
 <div class="jumbotron">
   <h1 class='display-4'>
+    Name:
     <%= capitalize(@person.f_name) %>
     <%= @person.m_name + '.' %>
     <%= capitalize(@person.l_name) %>,
   </h1>
-    <%= capitalize(@person.prefix) %>
+  <h2>
+    <%= capitalize(@person.prefix) + '.' %>
+  </h2>
   <p class='lead'>
+    Address:
     <%= capitalize(@person.address1) %>,
     <%= capitalize(@person.address2) %>
     <%= capitalize(@person.city) %>
@@ -27,9 +31,9 @@ puts 'input'
     <%= @person.zipcode %>
   </p>
   <p class='lead'>
-    <%= capitalize(@person.education) %>
+    Education level: <%= capitalize(@person.education) %>
     <br>
-    <%= @person.estimated_income.downcase %>
+    Income level: <%= @person.estimated_income.downcase %>
   </p>
 </div>
 
