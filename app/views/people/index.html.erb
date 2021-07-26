@@ -6,6 +6,8 @@ def capitalize (input)
   input = input.split
   input.each_with_index do |ele, i|
     input[i] = ele.capitalize
+    #capitalize letter after backslash
+    input[i] = input[i].gsub(/\/[a-z]/) {|s| s.upcase }
   end
   return input.join(' ')
 end
