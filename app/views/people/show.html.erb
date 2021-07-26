@@ -1,58 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+  <h1 class='display-4'>
+    <%= @person.f_name %>
+    <%= @person.m_name %>
+    <%= @person.l_name %>,
+  </h1>
+    <%= @person.prefix %>
+  <p class='lead'>
+    <%= @person.address1 %>,
+    <%= @person.address2 %>
+    <%= @person.city %>
+    <br>
+    <%= @person.state %>,
+    <%= @person.zipcode %>
+  </p>
+  <p class='lead'>
+    <%= @person.education %>
+    <br>
+    <%= @person.estimated_income %>
+  </p>
+</div>
 
-<p>
-  <strong>F name:</strong>
-  <%= @person.f_name %>
-</p>
-
-<p>
-  <strong>M name:</strong>
-  <%= @person.m_name %>
-</p>
-
-<p>
-  <strong>L name:</strong>
-  <%= @person.l_name %>
-</p>
-
-<p>
-  <strong>Prefix:</strong>
-  <%= @person.prefix %>
-</p>
-
-<p>
-  <strong>Address1:</strong>
-  <%= @person.address1 %>
-</p>
-
-<p>
-  <strong>Address2:</strong>
-  <%= @person.address2 %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @person.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @person.state %>
-</p>
-
-<p>
-  <strong>Zipcode:</strong>
-  <%= @person.zipcode %>
-</p>
-
-<p>
-  <strong>Education:</strong>
-  <%= @person.education %>
-</p>
-
-<p>
-  <strong>Estimated income:</strong>
-  <%= @person.estimated_income %>
-</p>
-
-<%= link_to 'Back', people_path %>
+<%#= link_to 'Edit', edit_person_path(@person), class:'btn btn-dark' %>
+<%= link_to 'Back', people_path, class:'btn btn-secondary' %>
