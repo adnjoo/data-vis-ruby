@@ -1,3 +1,7 @@
+# data-viz-ruby
+
+> full stack data viz app using chartkick for large data sets
+
 <a href='https://data-viz-ruby.herokuapp.com/'>
 <img src='scrn.png' width='250'`>
 </a>
