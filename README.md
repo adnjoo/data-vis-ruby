@@ -16,5 +16,12 @@ rails s
 
 ## Tech Stack:
 
-Ruby on Rails, Postgres (database), Chartkick (Highcharts), Bootstrap (styling), Heroku (deployment)
+- Ruby on Rails
 
+- Postgres (database)
+
+- Chartkick (Highcharts)
+
+- Bootstrap (styling)
+
+- Heroku (deployment)
