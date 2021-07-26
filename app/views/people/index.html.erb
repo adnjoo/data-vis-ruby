@@ -22,6 +22,7 @@ puts 'input'
 <table class='table table-striped table-bordered table-hover'>
   <thead class='table-light'>
     <tr>
+      <th>ID</th>
       <th>First Name</th>
       <th style="min-width: 120px">Middle Name</th>
       <th>Last Name</th>
@@ -40,6 +41,7 @@ puts 'input'
   <tbody>
     <% @people.each do |person| %>
       <tr>
+        <td><%= person.id %></td>
         <td><%= person.f_name.capitalize %></td>
         <td><%= person.m_name %></td>
         <td><%= person.l_name.capitalize %></td>
