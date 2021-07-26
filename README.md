@@ -1,4 +1,4 @@
-# data-viz-ruby
+# data-vis-ruby
 
 > Ruby on Rails data visualization tool
 
