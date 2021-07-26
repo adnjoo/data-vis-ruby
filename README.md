@@ -2,7 +2,7 @@
 
 > Ruby on Rails data visualization tool
 
-[<img src="./scrn.png" width='250'>](https://data-vis-ruby.herokuapp.com/)
+[<img src="./scrn1.png" width='250'>](https://data-vis-ruby.herokuapp.com/)
 
 ## Install:
 
@@ -14,7 +14,7 @@ yarn install
 rails s
 ```
 
-## Tech Stack: 
+## Tech Stack:
 
 Ruby on Rails, Postgres (database), Chartkick (Highcharts), Bootstrap (styling), Heroku (deployment)
 
