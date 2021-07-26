@@ -1,4 +1,6 @@
-## [Demo](https://data-viz-ruby.herokuapp.com/)
+<a href='https://data-viz-ruby.herokuapp.com/'>
+<img src='scrn.png' width='250'>
+</a>
 
 ## instructions:
 
