@@ -1,0 +1,201 @@
+<%# load highcharts %>
+<%= javascript_include_tag "https://code.highcharts.com/highcharts.js" %>
+<%= javascript_include_tag "https://code.highcharts.com/highcharts-3d.js" %>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<%# set thousands separator to comma %>
+<script>
+  Highcharts.setOptions({
+      lang: {
+          thousandsSep: ','
+      }
+  });
+</script>
+
+<%# header here %>
+<h1 class='text-center'>Data Viz Tool</h1>
+<div class='text-center'>This app lets you visualize a large data set.</div>
+<div class='text-center'>People Stats:</div>
+<br>
+
+<%=
+#method to capitalize keys
+def capitalize (input)
+  #iterate through keys
+  input.keys.each do |a|
+    b = a.split
+    # iterate through each word
+    b.each_with_index do |c,i|
+      # capitalize word
+      b[i] = c.capitalize
+      #capitalize letter after backslash
+      b[i] = b[i].gsub(/\/[a-z]/) {|s| s.upcase }
+    end
+    b = b.join(' ')
+    input[b] = input[a]
+    input.delete(a)
+  end
+  return input
+end
+
+# get education data
+education = Person.group(:education).count
+education = capitalize(education)
+puts education
+
+# get incomes data
+incomes = Person.group(:estimated_income).order(:estimated_income).count
+incomes=capitalize(incomes)
+puts incomes
+
+# get states data
+states = capitalize(Person.group(:state).count)
+puts states
+%>
+
+<%# accordion to display data %>
+<div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="15000">
+      <%= pie_chart education,
+      id: 'education-chart',
+      adapter: "highcharts",
+      library: {
+        chart: {
+          backgroundColor: '#18181b',
+          type: 'pie',
+          options3d: {
+            enabled: true,
+            alpha: 25,
+            beta: 0
+          }
+        },
+        title: {
+          text: 'Education',
+          style: {
+            color: 'white',
+          }
+        },
+        tooltip: {
+          pointFormat: '<b>{point.name}: {point.percentage:.1f}% ({point.y:,.0f})</b>'
+        },
+        colors: ['#68b7dc', '#6793db', '#6771dc', '#8067dc'],
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            depth: 40,
+            dataLabels: {
+              enabled: true,
+              format: '{point.name}: {point.percentage:.1f}%',
+              style: {
+                color: 'white'
+              }
+            }
+          }
+        }
+      }
+      %>
+    </div>
+    <div class="carousel-item" data-bs-interval="15000">
+      <%= pie_chart incomes,
+      adapter: "highcharts",
+      id: 'incomes-chart',
+      library: {
+        chart: {
+          backgroundColor: '#18181b',
+          type: 'pie',
+          options3d: {
+            enabled: true,
+            alpha: 25,
+            beta: 0
+          }
+        },
+        title: {
+          text: 'Estimated Income',
+          style: {
+            color: 'white',
+          }
+        },
+        tooltip: {
+          pointFormat: '<b>Estimated Income: {point.name}, {point.percentage:.1f}% ({point.y:,.0f})</b>',
+          style: {
+            # textTransform: 'lowercase'
+          }
+        },
+        colors: ['#68b7dc', '#6793db', '#6771dc', '#8067dc',
+        #additional colors - need 4 more; using https://mycolor.space/
+        '#D26BCC','#FF967C','#FFC762','#F9F871'
+        ],
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            depth: 40,
+            dataLabels: {
+              enabled: true,
+              format: '{point.name}: {point.percentage:.1f}%',
+              style: {
+                color: 'white',
+                # textTransform: 'lowercase'
+              }
+            }
+          }
+        }
+      }
+      %>
+    </div>
+    <div class="carousel-item" data-bs-interval="15000">
+      <%= pie_chart states,
+      adapter: "highcharts",
+      id: 'states-chart',
+      library: {
+        chart: {
+          backgroundColor: '#18181b',
+          type: 'pie',
+          options3d: {
+            enabled: true,
+            alpha: 25,
+            beta: 0
+          }
+        },
+        title: {
+          text: 'States',
+          style: {
+            color: 'white',
+          }
+        },
+        tooltip: {
+          pointFormat: '<b>{point.name}: {point.percentage:.1f}% ({point.y:,.0f})</b>'
+        },
+        # colors: ['#68b7dc', '#6793db', '#6771dc', '#8067dc'],
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            depth: 40,
+            dataLabels: {
+              enabled: true,
+              format: '{point.name}: {point.percentage:.1f}%',
+              style: {
+                color: 'white'
+              }
+            }
+          }
+        }
+      }
+      %>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<footer class='text-center mt-5 pt-5 mb-5'>made by <a href='https://github.com/adnjoo'>adnjoo <i class="fab fa-github"></i></a></footer>
