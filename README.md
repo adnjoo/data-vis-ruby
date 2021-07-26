@@ -25,4 +25,3 @@ rails s
 - Bootstrap (styling)
 
 - Heroku (deployment)
-- 
