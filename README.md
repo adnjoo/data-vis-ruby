@@ -25,3 +25,7 @@ rails s
 - Bootstrap (styling)
 
 - Heroku (deployment)
+
+
+
+double check
