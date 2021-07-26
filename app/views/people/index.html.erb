@@ -8,6 +8,8 @@ def capitalize (input)
     input[i] = ele.capitalize
     #capitalize letter after backslash
     input[i] = input[i].gsub(/\/[a-z]/) {|s| s.upcase }
+    #capitalize names after '
+    input[i] = input[i].gsub(/'[a-z]/) {|s| s.upcase }
   end
   return input.join(' ')
 end
@@ -44,7 +46,7 @@ puts 'input'
         <td><%= person.id %></td>
         <td><%= person.f_name.capitalize %></td>
         <td><%= person.m_name %></td>
-        <td><%= person.l_name.capitalize %></td>
+        <td><%= capitalize(person.l_name) %></td>
         <td><%= capitalize(person.prefix) + '.' %></td>
         <td><%= capitalize(person.address1) %></td>
         <td><%= person.address2.capitalize %></td>
