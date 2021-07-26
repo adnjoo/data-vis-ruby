@@ -1,12 +1,10 @@
-# data-viz-ruby
+# data-vis-ruby
 
-> full stack data viz app using chartkick for large data sets
+> Ruby on Rails data visualization tool
 
-<a href='https://data-viz-ruby.herokuapp.com/'>
-<img src='scrn.png' width='250'`>
-</a>
+[<img src="./scrn.png" width='250'>](https://data-viz-ruby.herokuapp.com/)
 
-## instructions:
+## Install:
 
 ```
 git clone https://github.com/adnjoo/data-viz-ruby
@@ -16,4 +14,7 @@ yarn install
 rails s
 ```
 
-Tech stack: Ruby on Rails, Postgres (db), Chartkick (Highcharts), Bootstrap (styling), Heroku (deployment)
+## Tech Stack: 
+
+Ruby on Rails, Postgres (database), Chartkick (Highcharts), Bootstrap (styling), Heroku (deployment)
+
